@@ -23,12 +23,6 @@ class App extends React.Component {
           friends: response.data
         });
       })
-      // .then(() => {
-      //   return axios.get("http://localhost:5000/");
-      // })
-      // .then(response => {
-      //   // console.log(response.data);
-      // })
       .catch(err => {
         console.log("Error:", err);
       });
@@ -39,6 +33,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <FriendsList friends={friends} />
+        {/* Think I got too ambitition on all this below, may come back to it depending on time */}
         {/* <ul className='navbar'>
           <li>
             <Link to='/'>Home</Link>
