@@ -1,9 +1,9 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+// import { Route, Link } from "react-router-dom";
 import axios from "axios";
-import Home from "./components/Home";
+// import Home from "./components/Home";
 import FriendsList from "./components/FriendsList";
-import FriendPage from "./components/FriendPage";
+// import FriendPage from "./components/FriendPage";
 
 import "./App.css";
 
@@ -23,12 +23,12 @@ class App extends React.Component {
           friends: response.data
         });
       })
-      .then(() => {
-        return axios.get("http://localhost:5000/");
-      })
-      .then(response => {
-        console.log(response.data);
-      })
+      // .then(() => {
+      //   return axios.get("http://localhost:5000/");
+      // })
+      // .then(response => {
+      //   // console.log(response.data);
+      // })
       .catch(err => {
         console.log("Error:", err);
       });
@@ -38,17 +38,29 @@ class App extends React.Component {
     const { friends } = this.state;
     return (
       <div className='App'>
-        <ul className='navbar'>
+        <FriendsList friends={friends} />
+        {/* <ul className='navbar'>
           <li>
             <Link to='/'>Home</Link>
           </li>
           <li>
             <Link to='/friends'>Friends</Link>
           </li>
-        </ul>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/friends' component={FriendsList} />
-        <Route path='/friends/:name' component={FriendPage} />
+        </ul> */}
+        {/* <Route
+          exact
+          path='/'
+          render={props => <Home {...props} friends={friends} />}
+        />
+        <Route
+          exact
+          path='/friends'
+          render={props => <FriendsList {...props} friends={friends} />}
+        />
+        <Route
+          path='/friend/:name'
+          render={props => <FriendPage {...props} friends={friends} />}
+        /> */}
       </div>
     );
   }

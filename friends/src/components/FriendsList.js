@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function FriendsList() {
+function FriendsList(props) {
   return (
     <div className='characters-list-wrapper'>
-      <div className='character-card'>
-        <h2>FriendsList</h2>
-      </div>
+      {props.friends.map(friend => (
+        <div className='character-card'>
+          <h2>Name: {friend.name}</h2>
+          <p>Age: {friend.age}</p>
+          <p>Email: {friend.email}</p>
+        </div>
+      ))}
     </div>
   );
 }
