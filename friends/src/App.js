@@ -1,9 +1,10 @@
 import React from "react";
-// import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import axios from "axios";
 // import Home from "./components/Home";
 import FriendsList from "./components/FriendsList";
 // import FriendPage from "./components/FriendPage";
+import FriendForm from "./components/FriendForm";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
+      // added server here after get
       .get("http://localhost:5000/friends")
       .then(response => {
         this.setState({
@@ -28,34 +30,25 @@ class App extends React.Component {
       });
   }
 
+  updateFriends = newFriends => {
+    this.setState({ friends: newFriends });
+  };
+
   render() {
     const { friends } = this.state;
     return (
       <div className='App'>
         <FriendsList friends={friends} />
-        {/* Think I got too ambitition on all this below, may come back to it depending on time */}
-        {/* <ul className='navbar'>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/friends'>Friends</Link>
-          </li>
-        </ul> */}
-        {/* <Route
-          exact
-          path='/'
-          render={props => <Home {...props} friends={friends} />}
-        />
+        <div>
+          <FriendForm />
+        </div>
         <Route
+          path='/form'
           exact
-          path='/friends'
-          render={props => <FriendsList {...props} friends={friends} />}
+          render={props => (
+            <FriendForm {...props} updateFriends={this.updateFriends} />
+          )}
         />
-        <Route
-          path='/friend/:name'
-          render={props => <FriendPage {...props} friends={friends} />}
-        /> */}
       </div>
     );
   }
