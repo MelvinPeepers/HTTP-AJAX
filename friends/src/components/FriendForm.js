@@ -22,7 +22,7 @@ class FriendForm extends React.Component {
 
     const { name, age, email } = this.state;
     const newFriend = { name, age, email };
-    // you can check the server that is running
+
     axios
       .post("http://localhost:5000/friends", newFriend)
       .then(response => {

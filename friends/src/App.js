@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import axios from "axios";
 // import Home from "./components/Home";
 import FriendsList from "./components/FriendsList";
@@ -18,7 +18,6 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      // added server here after get
       .get("http://localhost:5000/friends")
       .then(response => {
         this.setState({
@@ -35,10 +34,20 @@ class App extends React.Component {
   };
 
   render() {
-    const { friends } = this.state;
     return (
       <div className='App'>
-        <FriendsList friends={friends} />
+        <h1>Friends!</h1>
+        <div>
+          <Link to='/'>Home</Link>
+          <Link to='/friends'>Friends</Link>
+        </div>
+        <Route
+          path='/friends'
+          exact
+          render={props => (
+            <FriendsList {...props} friends={this.state.friends} />
+          )}
+        />
         <div>
           <FriendForm />
         </div>
