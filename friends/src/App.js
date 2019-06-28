@@ -37,14 +37,10 @@ class App extends React.Component {
       <div className='App'>
         <ul className='navbar'>
           <li>
-            <Link to='/friends' activeClassName='activeNavButton'>
-              Home
-            </Link>
+            <Link to='/friends'>Home</Link>
           </li>
           <li>
-            <Link to='/form' activeClassName='activeNavButton'>
-              Add Friends
-            </Link>
+            <Link to='/form'>Add Friends</Link>
           </li>
         </ul>
         <div>
