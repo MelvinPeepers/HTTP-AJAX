@@ -27,7 +27,6 @@ class FriendForm extends React.Component {
       .post("http://localhost:5000/friends", newFriend)
       .then(response => {
         this.props.updateFriends(response.data);
-        console.log(typeof this.props.updateFriends);
       })
       .catch(err => {
         console.log("err", err);

@@ -3,21 +3,6 @@ body {
   /* background: rgb(230, 230, 230); */
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .App {
@@ -63,6 +48,8 @@ code {
 
 .character-card {
   width: 30%;
+  max-width: 265px;
+  min-width: 220px;
   margin: 50px 1%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -83,27 +70,18 @@ code {
   cursor: pointer;
 }
 
-.character-card > h2 {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  display: block;
-  margin-top: 8px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .character-card > p {
   margin-top: 8px;
 }
 
 .character-card > img {
-  height: auto;
-  width: 100%;
+  height: 200px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 50%;
   border: 1px solid rgb(209, 209, 209);
   position: relative;
+  top: -60px;
+  margin-bottom: -60px;
 }
 
 .character-info-wrapper {
