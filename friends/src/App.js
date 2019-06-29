@@ -4,6 +4,7 @@ import axios from "axios";
 
 import FriendsList from "./components/FriendsList";
 import FriendForm from "./components/FriendForm";
+import EditFriend from "./components/EditFriend";
 
 import "./App.css";
 
@@ -42,6 +43,7 @@ class App extends React.Component {
           <li>
             <Link to='/form'>Add Friends</Link>
           </li>
+          <li />
         </ul>
         <div>
           <h1>Friends!</h1>
@@ -58,6 +60,18 @@ class App extends React.Component {
           exact
           render={props => (
             <FriendForm {...props} updateFriends={this.updateFriends} />
+          )}
+        />
+
+        <Route
+          path='/edit/:id'
+          exact
+          render={props => (
+            <EditFriend
+              {...props}
+              friends={this.state.friends}
+              updateFriends={this.updateFriends}
+            />
           )}
         />
       </div>

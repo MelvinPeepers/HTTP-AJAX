@@ -37,7 +37,7 @@ class FriendForm extends React.Component {
     const { name, age, email } = this.state;
     return (
       <div className='form'>
-        <h1>Submit Your Information</h1>
+        <h1>Submit Your Friends</h1>
         <form onSubmit={this.createFriend}>
           <input
             type='text'
