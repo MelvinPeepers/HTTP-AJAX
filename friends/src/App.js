@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Home from "./components/Home";
 import FriendsList from "./components/FriendsList";
-import FriendForm from "./components/FriendForm";
+import AddFriend from "./components/AddFriend";
 import EditFriend from "./components/EditFriend";
 
 import "./App.css";
@@ -38,12 +38,13 @@ class App extends React.Component {
     return (
       <div className='App'>
         <ul className='navbar'>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
           <div className='navtitle'>
             <h1>Friends!</h1>
           </div>
+          <li>
+            <Link to='/'>Home</Link>
+            <Link to='/form'>Add New Friend</Link>
+          </li>
         </ul>
         <div />
 
@@ -64,7 +65,7 @@ class App extends React.Component {
           path='/form'
           exact
           render={props => (
-            <FriendForm {...props} updateFriends={this.updateFriends} />
+            <AddFriend {...props} updateFriends={this.updateFriends} />
           )}
         />
 

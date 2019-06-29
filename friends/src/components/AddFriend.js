@@ -27,6 +27,7 @@ class FriendForm extends React.Component {
       .post("http://localhost:5000/friends", newFriend)
       .then(response => {
         this.props.updateFriends(response.data);
+        this.props.history.push("/friends");
       })
       .catch(err => {
         console.log("err", err);
@@ -37,7 +38,7 @@ class FriendForm extends React.Component {
     const { name, age, email } = this.state;
     return (
       <div className='form'>
-        <h1>Submit Your Friends</h1>
+        <h1>Add Your New Friend</h1>
         <form onSubmit={this.createFriend}>
           <input
             type='text'

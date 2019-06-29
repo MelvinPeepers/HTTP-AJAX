@@ -64,7 +64,7 @@ class EditFriend extends React.Component {
 
     return (
       <form onSubmit={this.changeFriend}>
-        <h1>Edit Friend</h1>
+        <h1>Edit Your Friend</h1>
         <input
           type='text'
           name='name'
