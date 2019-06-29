@@ -52,6 +52,7 @@ class EditFriend extends React.Component {
       .then(response => {
         this.setState({ errorMessage: null });
         this.props.updateFriends(response.data);
+        this.props.history.push("/friends");
       })
       .catch(error => {
         this.setState({ errorMessage: error.response.data.error });

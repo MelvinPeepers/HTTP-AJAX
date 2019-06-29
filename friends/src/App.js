@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link } from "react-router-dom";
 import axios from "axios";
 
+import Home from "./components/Home";
 import FriendsList from "./components/FriendsList";
 import FriendForm from "./components/FriendForm";
 import EditFriend from "./components/EditFriend";
@@ -38,16 +39,20 @@ class App extends React.Component {
       <div className='App'>
         <ul className='navbar'>
           <li>
-            <Link to='/friends'>Home</Link>
+            <Link to='/'>Home</Link>
           </li>
-          <li>
-            <Link to='/form'>Add Friends</Link>
-          </li>
-          <li />
+          <div className='navtitle'>
+            <h1>Friends!</h1>
+          </div>
         </ul>
-        <div>
-          <h1>Friends!</h1>
-        </div>
+        <div />
+
+        <Route
+          path='/'
+          exact
+          render={props => <Home {...props} friends={this.state.friends} />}
+        />
+
         <Route
           path='/friends'
           exact
@@ -64,7 +69,7 @@ class App extends React.Component {
         />
 
         <Route
-          path='/edit/:id'
+          path='/friend/edit/:id'
           exact
           render={props => (
             <EditFriend

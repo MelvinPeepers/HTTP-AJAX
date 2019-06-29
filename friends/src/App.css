@@ -27,6 +27,11 @@ body {
   align-items: center;
 }
 
+.navtitle {
+  margin-left: 32%;
+  color: #4285f9;
+}
+
 .navbar > li > a {
   color: #4285f4;
   text-decoration: none;
@@ -37,6 +42,17 @@ body {
 .navbar > li > a.activeNavButton {
   background-color: #4285f4;
   color: white;
+}
+
+.home-container {
+  margin-top: 10%;
+  color: #4285f9;
+}
+
+.home-container a {
+  font-size: 24px;
+  color: red;
+  text-decoration: none;
 }
 
 .characters-list-wrapper {
@@ -70,6 +86,24 @@ body {
   cursor: pointer;
 }
 
+.character-card h2 {
+  color: #4285f4;
+}
+
+.character-card span {
+  color: black;
+}
+
+.character-card .friend-age {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+}
+
+.character-card .friend-page-para {
+  font-weight: bold;
+}
+
 .character-card > p {
   margin-top: 8px;
 }
@@ -86,6 +120,11 @@ body {
 
 .character-info-wrapper {
   padding: 36px;
+}
+
+.character-card .friend-edit {
+  font-size: 16px;
+  color: orange;
 }
 
 .character-image {
