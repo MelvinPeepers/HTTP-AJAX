@@ -37,12 +37,10 @@ class EditFriend extends React.Component {
     });
   };
 
-  deleteFriend = event => {};
-
-  // following along with PUT Requests with Axios video
+  // following along with PUT Requests lecture video
   changeFriend = event => {
     event.preventDefault();
-
+    // have to have preventDefault
     const { name, age, email } = this.state;
     const updatedFriend = { name, age, email };
     const id = this.props.match.params.id;
@@ -53,6 +51,24 @@ class EditFriend extends React.Component {
         this.setState({ errorMessage: null });
         this.props.updateFriends(response.data);
         this.props.history.push("/friends");
+        // this above changes the page to friends after submitting
+      })
+      .catch(error => {
+        this.setState({ errorMessage: error.response.data.error });
+      });
+  };
+
+  deleteFriend = event => {
+    event.preventDefault();
+    // make a delete request
+    const id = this.props.match.params.id;
+    axios
+      .delete(`http://localhost:5000/friends/${id}`)
+      .then(response => {
+        this.setState({ errorMessage: null });
+        this.props.updateFriends(response.data);
+        this.props.history.push("/friends");
+        // this above changes the page to friends after submitting
       })
       .catch(error => {
         this.setState({ errorMessage: error.response.data.error });
