@@ -80,31 +80,44 @@ class EditFriend extends React.Component {
 
     return (
       <form onSubmit={this.changeFriend}>
-        <h1>Edit Your Friend</h1>
-        <input
-          type='text'
-          name='name'
-          placeholder='Name'
-          value={name}
-          onChange={this.handleChange}
-        />
-        <input
-          type='text'
-          name='email'
-          placeholder='Email'
-          value={email}
-          onChange={this.handleChange}
-        />
-        <input
-          type='text'
-          name='age'
-          placeholder='Age'
-          value={age}
-          onChange={this.handleChange}
-        />
-
-        <button type='submit'>Save Your Edit</button>
-        <button onClick={this.deleteFriend}>Delete</button>
+        <div className='form'>
+          <h1 className='edit-header'>Edit Your Friend</h1>
+          <div className='input-field'>
+            <input
+              type='text'
+              name='name'
+              placeholder='Name'
+              value={name}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='input-field'>
+            <input
+              type='text'
+              name='email'
+              placeholder='Email'
+              value={email}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className='input-field'>
+            <input
+              type='text'
+              name='age'
+              placeholder='Age'
+              value={age}
+              onChange={this.handleChange}
+            />
+          </div>
+        </div>
+        <div className='btn-wrapper'>
+          <button className='btn-save edit-btn' type='submit'>
+            Save
+          </button>
+          <button className='btn-delete edit-btn' onClick={this.deleteFriend}>
+            Delete
+          </button>
+        </div>
       </form>
     );
   }

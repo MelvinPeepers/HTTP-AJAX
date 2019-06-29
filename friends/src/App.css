@@ -154,3 +154,54 @@ body {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
   transition-delay: 0s;
 }
+
+.input-field {
+}
+
+.input-field input {
+  border: 1px solid #4285f4;
+  border-radius: 15px;
+  width: 200px;
+  height: 25px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+input::placeholder {
+  color: red;
+  opacity: 0.4;
+}
+
+.btn-add {
+  width: 200px;
+  height: 25px;
+  border-radius: 15px;
+  border: 1px solid red;
+  background-color: red;
+  font-size: 14px;
+  padding-top: 3px;
+}
+
+.btn-add input[value="Add"] {
+  font-size: 14px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.edit-btn {
+  width: 90px;
+  height: 25px;
+  font-size: 14px;
+}
+.btn-save {
+  border: 1px solid#4285f4;
+  background-color: #4285f4;
+}
+
+.btn-delete {
+  border: 1px solid red;
+  background-color: red;
+}
