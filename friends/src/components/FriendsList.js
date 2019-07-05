@@ -13,9 +13,12 @@ function FriendsList(props) {
             <span className='friend-page-para'>Age:</span>{" "}
             <span className='friend-age'>{friend.age}</span>
           </p>
-          <p>Email: {friend.email}</p>
+          <p>
+            <span className='friend-page-para email-para'>Email:</span>{" "}
+            {friend.email}
+          </p>
           <Link to={`/friend/edit/${friend.id}`}>
-            <span className='friend-edit'>Edit</span>
+            <a className='friend-edit'>Edit</a>
           </Link>
         </div>
       ))}

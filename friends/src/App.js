@@ -43,6 +43,7 @@ class App extends React.Component {
           </div>
           <li>
             <Link to='/'>Home</Link>
+            <Link to='/friends'>Friends List</Link>
             <Link to='/form'>Add New Friend</Link>
           </li>
         </ul>
