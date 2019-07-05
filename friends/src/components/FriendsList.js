@@ -1,29 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import Friend from "./Friend";
 
-function FriendsList(props) {
-  return (
-    <div className='characters-list-wrapper'>
-      {props.friends.map(friend => (
-        <div className='character-card' key={friend.name}>
-          <h2>
-            <span>Name:</span> {friend.name}
-          </h2>
-          <p>
-            <span className='friend-page-para'>Age:</span>{" "}
-            <span className='friend-age'>{friend.age}</span>
-          </p>
-          <p>
-            <span className='friend-page-para email-para'>Email:</span>{" "}
-            {friend.email}
-          </p>
-          <Link to={`/friend/edit/${friend.id}`}>
-            <a className='friend-edit'>Edit</a>
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
+class FriendsList extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.friends.map(friend => (
+          <Friend key={friend.id} friend={friend} />
+        ))}
+      </div>
+    );
+  }
 }
-// Got names, age and email to display
+
 export default FriendsList;

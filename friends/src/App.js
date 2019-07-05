@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import axios from "axios";
 
@@ -9,25 +9,18 @@ import EditFriend from "./components/EditFriend";
 
 import "./App.css";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      friends: []
-    };
-  }
+class App extends Component {
+  state = {
+    friends: [],
+    loading: false
+  };
 
-  componentDidMount() {
-    axios
-      .get("http://localhost:5000/friends")
-      .then(response => {
-        this.setState({
-          friends: response.data
-        });
-      })
-      .catch(err => {
-        console.log("Error:", err);
-      });
+  async componentDidMount() {
+    this.setState({ loading: true });
+
+    const response = await axios.get("http://localhost:5000/friends");
+
+    this.setState({ friends: response.data, loading: false });
   }
 
   updateFriends = newFriends => {
